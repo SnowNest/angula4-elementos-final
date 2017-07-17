@@ -1,3 +1,6 @@
 <h1>Primer proyecto de Angular 4</h1>
 <p>Me llamo {{nombre}}</p>
 <p>Un mensaje {{mensa.titulo}} el cuepro {{mensa.cuerpo}}</p>
+<ul>
+    <li *ngFor="let mensaje of mensajes">{{mensaje.titulo}}</li>
+</ul>
