@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   estatus:Estatus;
   constructor(private servicio:MensajeService){
     this.mensa=new Mensaje('actualizado','Mensajito tonto actualizado');
+    this.estatus=new Estatus(false);
   }
 
    ngOnInit():void{

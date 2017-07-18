@@ -1,5 +1,8 @@
 export class Estatus {
-    success:boolean;
+   
+    constructor(private success:boolean){
+        
+    }
 
     
 }
