@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   mensajes:Mensaje[];
   estatus:Estatus;
   constructor(private servicio:MensajeService){
-    this.mensa=new Mensaje('actualizado','Mensajito tonto actualizado');
+    this.mensa=new Mensaje("uno",'titulo','Mensajito');
     this.estatus=new Estatus(false);
   }
 
