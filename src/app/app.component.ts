@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Mensaje} from './mensaje';
+import {Estatus} from './estatus'
 import {MensajeService} from './mensaje.service';
 
 @Component({
@@ -13,15 +14,23 @@ export class AppComponent implements OnInit {
   nombre:string='Juan Carlos';
   mensa:Mensaje;
   mensajes:Mensaje[];
+  estatus:Estatus;
   constructor(private servicio:MensajeService){
-    this.mensa=new Mensaje('primer','Mensajito');
+    this.mensa=new Mensaje('actualizado','Mensajito tonto actualizado');
   }
 
    ngOnInit():void{
   this.obtenerTodosMensajes();
+  
   }
    obtenerTodosMensajes(){
     return this.servicio.getMensajes().
     subscribe(mensajes=>this.mensajes=mensajes);
    }
+
+   actualizarElMensaje(){
+      return this.servicio.actualizarMensaje(this.mensa).
+      subscribe(estatus=>this.estatus=estatus);
+   }
+  
 }
