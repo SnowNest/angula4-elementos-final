@@ -11,14 +11,25 @@ import {MensajeService} from './mensaje.service';
 })
 export class AppComponent implements OnInit {
   title = 'app works!';
+   favoriteSeason: string;
   nombre:string='Juan Carlos';
   mensa:Mensaje;
   mensajes:Mensaje[];
   estatus:Estatus;
   id:string="dos";
+
+
+  //Para probar radios
+  seasons = [
+    'Winter',
+    'Spring',
+    'Summer',
+    'Autumn',
+  ];
   constructor(private servicio:MensajeService){
     this.mensa=new Mensaje("uno",'titulo','Mensajito');
     this.estatus=new Estatus(false);
+  
   }
 
    ngOnInit():void{
