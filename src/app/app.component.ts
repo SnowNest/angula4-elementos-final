@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   mensa:Mensaje;
   mensajes:Mensaje[];
   estatus:Estatus;
+  id:string="dos";
   constructor(private servicio:MensajeService){
     this.mensa=new Mensaje("uno",'titulo','Mensajito');
     this.estatus=new Estatus(false);
@@ -28,10 +29,23 @@ export class AppComponent implements OnInit {
     return this.servicio.getMensajes().
     subscribe(mensajes=>this.mensajes=mensajes);
    }
+  guardarElMensaje(){
+    return this.servicio.guardarMensaje(this.mensa).
+    subscribe(estatus=>this.estatus=estatus)
+  }
 
    actualizarElMensaje(){
       return this.servicio.actualizarMensaje(this.mensa).
       subscribe(estatus=>this.estatus=estatus);
    }
+    borrarElMensaje(){
+      return this.servicio.borrarMensaje(this.id).
+      subscribe(estatus=> this.estatus=estatus);
+    }
+
+    buscarPorId(){
+      return this.servicio.getMensaje(this.id).
+      subscribe(mensaje=>this.mensa=mensaje);
+    }
   
 }

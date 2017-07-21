@@ -7,5 +7,9 @@
  <input [(ngModel)]="mensa.id" placeholder="titulo">
  <input [(ngModel)]="mensa.titulo" placeholder="titulo">
   <input [(ngModel)]="mensa.cuerpo" placeholder="cuerpo">
+  <button (click)="guardarElMensaje()">Guardar el mensaje</button>
 <button (click)="actualizarElMensaje()">Actualizar mensaje</button>
 <p>{{estatus.success}}</p>
+<input [(ngModel)]="id" placeholder="id">
+<button (click)="borrarElMensaje()">Borrar el mensaje</button>
+<button (click)="buscarPorId()">Buscar por id</button>
