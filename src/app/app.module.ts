@@ -9,22 +9,27 @@ import 'clarity-icons';
 import 'clarity-icons/shapes/essential-shapes';
 import { ClarityModule } from 'clarity-angular';
 import {ClarityIcons}  from 'clarity-icons'
-
-
-
-
+import {routing} from  './app.routes';
 
 
 import { AppComponent } from './app.component';
+import { GuardarComponent } from './guardar/guardar.component';
+import { BuscartodosComponent } from './buscartodos/buscartodos.component';
+import { BuscarporidComponent } from './buscarporid/buscarporid.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GuardarComponent,
+    BuscartodosComponent,
+    BuscarporidComponent
   ],
   imports: [
     BrowserModule,
+    routing,
     FormsModule,
     HttpModule,
+
     BrowserAnimationsModule,
     ClarityModule,
    // MdButtonModule, MdCheckboxModule, MdRadioModule
